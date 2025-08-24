@@ -1,6 +1,8 @@
 package pokemon.view.backend.Configuration;
 
 import lombok.RequiredArgsConstructor;
+import pokemon.view.backend.Configuration.JWT.JWTFilter;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -21,9 +23,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    // Your JWT filter should extend OncePerRequestFilter and be a @Component
-    private final JWTFilter jwtFilter;
-
+    // Your JWT filter should extend OncePe
+    private JWTFilter jwtFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
